@@ -90,4 +90,7 @@ D:\Sistemas\Sol_Minimarket\Minimarket\bin\Debug\pt\Microsoft.ReportViewer.WinFor
 D:\Sistemas\Sol_Minimarket\Minimarket\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Sistemas\Sol_Minimarket\Minimarket\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Sistemas\Sol_Minimarket\Minimarket\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Rpt_Categorias.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Marcas.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Fmr_Marca.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Categoria.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.UnidadMedidas.resources

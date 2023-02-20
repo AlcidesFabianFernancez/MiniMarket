@@ -95,6 +95,10 @@ namespace Datos
             {
                 valor = "ERROR " + e;
             }
+            finally
+            {
+                if (mysql.State == ConnectionState.Open) mysql.Close();
+            }
             return valor;
         }
 

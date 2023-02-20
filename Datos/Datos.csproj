@@ -81,6 +81,8 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="D_Categoria.cs" />
+    <Compile Include="D_Marca.cs" />
+    <Compile Include="D_UnidadMedidas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

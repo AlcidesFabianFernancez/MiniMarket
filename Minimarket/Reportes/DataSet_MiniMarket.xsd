@@ -9,13 +9,21 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSet_MiniMarket" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet_MiniMarket" msprop:Generator_DataSetName="DataSet_MiniMarket">
+  <xs:element name="DataSet_MiniMarket" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet_MiniMarket" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_MiniMarket">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+        <xs:element name="Categoria" msprop:Generator_RowClassName="CategoriaRow" msprop:Generator_RowEvHandlerName="CategoriaRowChangeEventHandler" msprop:Generator_RowDeletedName="CategoriaRowDeleted" msprop:Generator_RowDeletingName="CategoriaRowDeleting" msprop:Generator_RowEvArgName="CategoriaRowChangeEvent" msprop:Generator_TablePropName="Categoria" msprop:Generator_RowChangedName="CategoriaRowChanged" msprop:Generator_UserTableName="Categoria" msprop:Generator_RowChangingName="CategoriaRowChanging" msprop:Generator_TableClassName="CategoriaDataTable" msprop:Generator_TableVarName="tableCategoria">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="cod_categoria" msprop:Generator_ColumnPropNameInRow="cod_categoria" msprop:Generator_ColumnPropNameInTable="cod_categoriaColumn" msprop:Generator_ColumnVarNameInTable="columncod_categoria" msprop:Generator_UserColumnName="cod_categoria" type="xs:string" minOccurs="0" />
+              <xs:element name="cod_categoria" msprop:Generator_UserColumnName="cod_categoria" msprop:Generator_ColumnPropNameInTable="cod_categoriaColumn" msprop:Generator_ColumnPropNameInRow="cod_categoria" msprop:Generator_ColumnVarNameInTable="columncod_categoria" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Marca" msprop:Generator_RowEvHandlerName="MarcaRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcaRowDeleted" msprop:Generator_RowDeletingName="MarcaRowDeleting" msprop:Generator_RowEvArgName="MarcaRowChangeEvent" msprop:Generator_TablePropName="Marca" msprop:Generator_RowChangedName="MarcaRowChanged" msprop:Generator_RowChangingName="MarcaRowChanging" msprop:Generator_TableClassName="MarcaDataTable" msprop:Generator_RowClassName="MarcaRow" msprop:Generator_TableVarName="tableMarca" msprop:Generator_UserTableName="Marca">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod_marca" msprop:Generator_ColumnPropNameInRow="cod_marca" msprop:Generator_ColumnPropNameInTable="cod_marcaColumn" msprop:Generator_ColumnVarNameInTable="columncod_marca" msprop:Generator_UserColumnName="cod_marca" type="xs:string" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

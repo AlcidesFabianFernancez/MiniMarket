@@ -25,8 +25,7 @@ namespace Minimarket
             txtDescripcion.Enabled = false;
             btnGuardar.Enabled = false;
             btnEliminar.Enabled = false;
-           
-            //tabla();
+            
         }
         private void Categoria_Load(object sender, EventArgs e)
         {
@@ -45,6 +44,60 @@ namespace Minimarket
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        //boble clic sobre una fila en el datagridview
+        private void dgv_principal_DoubleClick(object sender, EventArgs e)
+        {
+            selectionItems();
+        }
+
+        //Boton Nuevo
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.opcion = 0;//nuevo registro
+            activarMantenimiento();
+
+        }
+
+        //Boton Guardar
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            validar();
+            E_Categoria entidades = new E_Categoria();
+            string rsta = "";
+            entidades.cod_categoria = int.Parse(txtCodigo.Text.Trim());
+            entidades.descripcion = txtDescripcion.Text.Trim();
+
+            rsta = N_Categoria.guardarActualizar(this.opcion, entidades);
+            MessageBox.Show(rsta);
+            limpliar();
+            this.tbp_principal.SelectedIndex = 0;
+            listadoCategoria();
+        }
+        //Boton Cancelar
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.tbp_principal.SelectedIndex = 0;
+            this.txtDescripcion.ReadOnly = true;
+
+        }
+
+        //Boton eliminar
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            DialogResult option;
+            option = MessageBox.Show("¿ELIMINAR REISTRO?", "AVISO DEL SISTEMA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (option == DialogResult.Yes)
+            {
+
+                MessageBox.Show(N_Categoria.eliminar(this.Codigo_ca));
+                listadoCategoria();
+                this.tbp_principal.SelectedIndex = 0;
+                limpliar();
+            }
+
         }
 
         //Cargamos el datagridView
@@ -82,11 +135,7 @@ namespace Minimarket
             }
         }
 
-        //boble clic sobre una fila en el datagridview
-        private void dgv_principal_DoubleClick(object sender, EventArgs e)
-        {
-            selectionItems();
-        }
+       
 
         //Boton buscar
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -112,59 +161,12 @@ namespace Minimarket
         //hacer reporte
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            Reportes.Frm_Rpt_Categorias reporte = new Reportes.Frm_Rpt_Categorias();
+            Reportes.Fmr_Marca reporte = new Reportes.Fmr_Marca();
             reporte.ShowDialog();
         }
         #endregion
 
         #region"Mantenimiento"
-        //Boton Nuevo
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            this.opcion = 0;//nuevo registro
-            activarMantenimiento();
-
-        }
-
-        //Boton Guardar
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            validar();
-            E_Categoria entidades = new E_Categoria();
-            string rsta = "";
-            entidades.cod_categoria = int.Parse(txtCodigo.Text.Trim());
-            entidades.descripcion = txtDescripcion.Text.Trim();
-            
-            rsta = N_Categoria.guardarActualizar(this.opcion, entidades);
-            MessageBox.Show(rsta);
-            limpliar();
-            this.tbp_principal.SelectedIndex = 0;
-            listadoCategoria();
-        }
-        //Boton Cancelar
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
-           
-        }
-
-        //Boton eliminar
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-            DialogResult option;
-            option = MessageBox.Show("¿ELIMINAR REISTRO?", "AVISO DEL SISTEMA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (option == DialogResult.Yes)
-            {
-               
-                MessageBox.Show(N_Categoria.eliminar(this.Codigo_ca));
-                listadoCategoria();
-                this.tbp_principal.SelectedIndex = 0;
-                limpliar();
-            }
-        }
-
 
         //Metodo Validar
         private void validar()
@@ -220,6 +222,6 @@ namespace Minimarket
 
         #endregion
 
-        
+
     }
 }

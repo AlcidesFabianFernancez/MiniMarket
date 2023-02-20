@@ -12,26 +12,27 @@ using System.Windows.Forms;
 
 namespace Minimarket.Reportes
 {
-    public partial class Frm_Rpt_Categorias : Form
+    public partial class Frm_Categoria : Form
     {
-         
-        public Frm_Rpt_Categorias()
+        public Frm_Categoria()
         {
             InitializeComponent();
         }
 
-        private void Frm_Rpt_Categorias_Load(object sender, EventArgs e)
+        private void Frm_Categoria_Load(object sender, EventArgs e)
         {
-            report();
-            //this.reportViewer1.RefreshReport();
+            cargarReporte();
+            this.reportViewer1.RefreshReport();
         }
 
-        private void report()
+        private void cargarReporte()
         {
             reportViewer1.LocalReport.DataSources.Clear();
-            ReportDataSource rp= new ReportDataSource("DtCategoria", N_Categoria.listarCategoria());
+
+            ReportDataSource rp = new ReportDataSource("DataSet1", N_Categoria.listarCategoria());
+
             reportViewer1.LocalReport.DataSources.Add(rp);
-            reportViewer1.RefreshReport();
+
         }
     }
 }

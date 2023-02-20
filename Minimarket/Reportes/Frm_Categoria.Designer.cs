@@ -1,6 +1,6 @@
 ﻿namespace Minimarket.Reportes
 {
-    partial class Frm_Rpt_Categorias
+    partial class Frm_Categoria
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet_MiniMarket = new Minimarket.Reportes.DataSet_MiniMarket();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_MiniMarket)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DtCategoria";
-            reportDataSource1.Value = this.dataTable1BindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Minimarket.Reportes.Rpt_Categoria.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -50,27 +41,15 @@
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dataSet_MiniMarket
-            // 
-            this.dataSet_MiniMarket.DataSetName = "DataSet_MiniMarket";
-            this.dataSet_MiniMarket.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.dataSet_MiniMarket;
-            // 
-            // Frm_Rpt_Categorias
+            // Frm_Categoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "Frm_Rpt_Categorias";
-            this.Text = "Frm_Rpt_Categorias";
-            this.Load += new System.EventHandler(this.Frm_Rpt_Categorias_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_MiniMarket)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            this.Name = "Frm_Categoria";
+            this.Text = "Frm_Categoria";
+            this.Load += new System.EventHandler(this.Frm_Categoria_Load);
             this.ResumeLayout(false);
 
         }
@@ -78,7 +57,5 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource dataTable1BindingSource;
-        private DataSet_MiniMarket dataSet_MiniMarket;
     }
 }
