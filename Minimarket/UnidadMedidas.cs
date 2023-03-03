@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,13 @@ namespace Minimarket
         public UnidadMedidas()
         {
             InitializeComponent();
+            
+        }
+
+        private void UnidadMedidas_Load(object sender, EventArgs e)
+        {
             limpliar();
+            listado();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -32,6 +39,14 @@ namespace Minimarket
             buscar();
         }
 
+        private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buscar();
+            }
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -39,7 +54,8 @@ namespace Minimarket
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-
+            Reportes.Frm_Unidad_Medida reporte = new Reportes.Frm_Unidad_Medida();
+            reporte.ShowDialog();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -52,18 +68,22 @@ namespace Minimarket
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
+            cancelar();
+            listado();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminar();
+            limpliar();
+            cancelar();
+            listado();
 
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
+            cancelar();
             limpliar();
         }
 
@@ -163,6 +183,19 @@ namespace Minimarket
         }
 
 
+        private void listado()
+        {
+            try
+            {
+                dgv_principal.DataSource = N_UnidadMedidas.listado_um();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+
         private void guardar()
         {
             validar();
@@ -178,10 +211,23 @@ namespace Minimarket
 
         private void eliminar()
         {
-            MessageBox.Show(N_UnidadMedidas.eliminar(int.Parse(txtCodigo.Text)));
-            limpliar(); 
+            DialogResult option;
+            option = MessageBox.Show("¿ELIMINAR REISTRO?", "AVISO DEL SISTEMA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (option == DialogResult.Yes)
+            {
+                MessageBox.Show(N_UnidadMedidas.eliminar(int.Parse(txtCodigo.Text)));
+            } 
         }
+
+
+        private void cancelar()
+        {
+            this.tbp_principal.SelectedIndex = 0;
+            this.txtDescripcion.ReadOnly = true;
+        }
+
         #endregion
 
+        
     }
 }

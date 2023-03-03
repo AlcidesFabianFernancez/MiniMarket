@@ -63,17 +63,23 @@ namespace Minimarket
         //Boton Guardar
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            validar();
-            E_Categoria entidades = new E_Categoria();
-            string rsta = "";
-            entidades.cod_categoria = int.Parse(txtCodigo.Text.Trim());
-            entidades.descripcion = txtDescripcion.Text.Trim();
+            if (validar())
+            {
+                E_Categoria entidades = new E_Categoria();
+                string rsta = "";
+                entidades.cod_categoria = int.Parse(txtCodigo.Text.Trim());
+                entidades.descripcion = txtDescripcion.Text.Trim();
 
-            rsta = N_Categoria.guardarActualizar(this.opcion, entidades);
-            MessageBox.Show(rsta);
-            limpliar();
-            this.tbp_principal.SelectedIndex = 0;
-            listadoCategoria();
+                rsta = N_Categoria.guardarActualizar(this.opcion, entidades);
+                MessageBox.Show(rsta);
+                limpliar();
+                this.tbp_principal.SelectedIndex = 0;
+                listadoCategoria();
+                this.tbp_principal.SelectedIndex = 0;
+                this.txtDescripcion.ReadOnly = true;
+            }
+            txtDescripcion.Focus(); 
+           
         }
         //Boton Cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -95,6 +101,8 @@ namespace Minimarket
                 MessageBox.Show(N_Categoria.eliminar(this.Codigo_ca));
                 listadoCategoria();
                 this.tbp_principal.SelectedIndex = 0;
+                this.tbp_principal.SelectedIndex = 0;
+                this.txtDescripcion.ReadOnly = true;
                 limpliar();
             }
 
@@ -161,7 +169,7 @@ namespace Minimarket
         //hacer reporte
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            Reportes.Fmr_Marca reporte = new Reportes.Fmr_Marca();
+            Reportes.Frm_Categoria reporte = new Reportes.Frm_Categoria();
             reporte.ShowDialog();
         }
         #endregion
@@ -169,12 +177,15 @@ namespace Minimarket
         #region"Mantenimiento"
 
         //Metodo Validar
-        private void validar()
+        private bool validar()
         {
+            bool valor = true;
             if (txtDescripcion.Text == String.Empty)
             {
-                MessageBox.Show("No se ha cargado Descripcion", "Aviso del Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Debe cargar los datos (*)", "Aviso del Sistema", MessageBoxButtons.OK);
+                valor = false;
             }
+            return valor;
         }
 
         //Cargar siguiente codigo Categoria

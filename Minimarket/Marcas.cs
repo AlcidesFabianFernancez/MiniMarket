@@ -22,8 +22,15 @@ namespace Minimarket
         public Marcas()
         {
             InitializeComponent();
+            
+        }
+
+        private void Marcas_Load(object sender, EventArgs e)
+        {
             limpliar();
-            this.txtCodigo.Enabled= false;
+            this.txtCodigo.Enabled = false;
+            cargarCod();
+            listado();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,6 +46,14 @@ namespace Minimarket
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
             buscar();
+        }
+
+        private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buscar();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -61,17 +76,22 @@ namespace Minimarket
         private void btnGuardar_Click(object sender, EventArgs e)
         {
            guardar();
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminar();
+            limpliar();
+            listado();
+            cancelar();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
+           cancelar();
+            listado();
         }
 
 
@@ -89,12 +109,15 @@ namespace Minimarket
         #region "Metodos Privados"
 
         //Metodo Validar
-        private void validar()
+        private bool validar()
         {
+            bool valor = true;
             if (txtDescripcion.Text == String.Empty)
             {
-                MessageBox.Show("No se ha cargado Descripcion", "Aviso del Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Debe cargar los datos (*)", "Aviso del Sistema", MessageBoxButtons.OK);
+                valor = false;
             }
+            return valor;
         }
 
         //Cargar siguiente codigo Categoria
@@ -141,19 +164,31 @@ namespace Minimarket
 
         private void guardar()
         {
-            validar();
-            E_Marca e_marca = new E_Marca();
-            e_marca.cod_marca = int.Parse(txtCodigo.Text);
-            e_marca.descripcion = txtDescripcion.Text;
-            String mensaje= N_Marca.guardarActualizar(this.opcion, e_marca);
-            limpliar();
-            MessageBox.Show(mensaje);
+            if (validar())
+            {
+                E_Marca e_marca = new E_Marca();
+                e_marca.cod_marca = int.Parse(txtCodigo.Text);
+                e_marca.descripcion = txtDescripcion.Text;
+                String mensaje = N_Marca.guardarActualizar(this.opcion, e_marca);
+                limpliar();
+                MessageBox.Show(mensaje);
+                listado();
+                cancelar();
+            }
+            txtDescripcion.Focus() ;
+           
             
         }
 
         private void eliminar()
         {
-            MessageBox.Show(N_Marca.eliminar(int.Parse(txtCodigo.Text)));
+            DialogResult option;
+            option = MessageBox.Show("¿ELIMINAR REISTRO?", "AVISO DEL SISTEMA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (option == DialogResult.Yes)
+            {
+                MessageBox.Show(N_Marca.eliminar(int.Parse(txtCodigo.Text)));
+                
+            }
         }
 
         //seleccionamos una fila
@@ -175,7 +210,28 @@ namespace Minimarket
             }
         }
 
+
+        private void cancelar()
+        {
+            this.tbp_principal.SelectedIndex = 0;
+            this.txtDescripcion.ReadOnly = true;
+        }
+
+
+        private void listado()
+        {
+            try
+            {
+                dgv_principal.DataSource = N_Marca.listarMarca();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
         #endregion
 
+       
     }
 }

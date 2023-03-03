@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnidadMedidas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tbp_mantenimiento = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.tbp_principal.SuspendLayout();
             this.tbp_listado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_principal)).BeginInit();
@@ -125,8 +125,8 @@
             // 
             this.dgv_principal.AllowUserToAddRows = false;
             this.dgv_principal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_principal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_principal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_principal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_principal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgv_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -144,6 +144,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(255, 20);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
             // label2
             // 
@@ -188,6 +189,15 @@
             this.tbp_mantenimiento.TabIndex = 1;
             this.tbp_mantenimiento.Text = "Mantenimiento";
             this.tbp_mantenimiento.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(279, 63);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Hasta 5 caracteres*";
             // 
             // txtDescripcion
             // 
@@ -297,15 +307,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Código";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(279, 63);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Hasta 5 caracteres*";
-            // 
             // UnidadMedidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +319,7 @@
             this.Controls.Add(this.tbp_principal);
             this.Name = "UnidadMedidas";
             this.Text = "UnidadMedidas";
+            this.Load += new System.EventHandler(this.UnidadMedidas_Load);
             this.tbp_principal.ResumeLayout(false);
             this.tbp_listado.ResumeLayout(false);
             this.tbp_listado.PerformLayout();

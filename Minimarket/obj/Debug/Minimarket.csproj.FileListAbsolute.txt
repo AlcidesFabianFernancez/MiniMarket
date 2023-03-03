@@ -94,3 +94,8 @@ D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Marcas.resources
 D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Fmr_Marca.resources
 D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Categoria.resources
 D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.UnidadMedidas.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Unidad_Medida.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Almacenes.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Almacenes.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Productos.resources
+D:\Sistemas\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Frm_Buscar_Generico.resources

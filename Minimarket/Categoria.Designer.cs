@@ -206,7 +206,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(80, 60);
+            this.txtDescripcion.Location = new System.Drawing.Point(100, 60);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(182, 20);
             this.txtDescripcion.TabIndex = 4;
@@ -216,13 +216,13 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(22, 60);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(73, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Descripcion";
+            this.label4.Text = "Descripcion(*)";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(80, 15);
+            this.txtCodigo.Location = new System.Drawing.Point(100, 15);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(85, 20);
             this.txtCodigo.TabIndex = 1;

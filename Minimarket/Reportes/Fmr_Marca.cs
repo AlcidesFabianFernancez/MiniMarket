@@ -33,7 +33,7 @@ namespace Minimarket.Reportes
             ReportDataSource rp = new ReportDataSource("DataSet1", N_Marca.listarMarca());
 
             reportViewer1.LocalReport.DataSources.Add(rp);
-
+            reportViewer1.RefreshReport();
         }
     }
 }

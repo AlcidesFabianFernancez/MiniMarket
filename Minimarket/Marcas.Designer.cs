@@ -142,6 +142,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(255, 20);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
             // label2
             // 
@@ -288,6 +289,7 @@
             this.Controls.Add(this.tbp_principal);
             this.Name = "Marcas";
             this.Text = "Marcas";
+            this.Load += new System.EventHandler(this.Marcas_Load);
             this.tbp_principal.ResumeLayout(false);
             this.tbp_listado.ResumeLayout(false);
             this.tbp_listado.PerformLayout();
