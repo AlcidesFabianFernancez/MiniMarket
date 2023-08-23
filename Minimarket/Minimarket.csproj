@@ -76,6 +76,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -114,6 +115,18 @@
     <Compile Include="Categoria.Designer.cs">
       <DependentUpon>Categoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ciudad.Designer.cs">
+      <DependentUpon>Ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Departamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departamento.Designer.cs">
+      <DependentUpon>Departamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Buscar_Generico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +147,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DataSet_MiniMarket.cs">
       <DependentUpon>DataSet_MiniMarket.xsd</DependentUpon>
     </Compile>
@@ -148,11 +167,35 @@
     <Compile Include="Reportes\Fmr_Marca.Designer.cs">
       <DependentUpon>Fmr_Marca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmProveedor.Designer.cs">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_Almacenes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Frm_Almacenes.Designer.cs">
       <DependentUpon>Frm_Almacenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Ciudad.Designer.cs">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Departamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Departamento.Designer.cs">
+      <DependentUpon>Frm_Departamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rubro.Designer.cs">
+      <DependentUpon>Frm_Rubro.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Frm_Unidad_Medida.cs">
       <SubType>Form</SubType>
@@ -166,6 +209,12 @@
     <Compile Include="Reportes\Frm_Categoria.Designer.cs">
       <DependentUpon>Frm_Categoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rubros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rubros.Designer.cs">
+      <DependentUpon>Rubros.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UnidadMedidas.cs">
       <SubType>Form</SubType>
@@ -178,6 +227,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Categoria.resx">
       <DependentUpon>Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ciudad.resx">
+      <DependentUpon>Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departamento.resx">
+      <DependentUpon>Departamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Buscar_Generico.resx">
       <DependentUpon>Frm_Buscar_Generico.cs</DependentUpon>
@@ -198,11 +253,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Fmr_Marca.resx">
       <DependentUpon>Fmr_Marca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FrmProveedor.resx">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Almacenes.resx">
       <DependentUpon>Frm_Almacenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Ciudad.resx">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Departamento.resx">
+      <DependentUpon>Frm_Departamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rubro.resx">
+      <DependentUpon>Frm_Rubro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Unidad_Medida.resx">
       <DependentUpon>Frm_Unidad_Medida.cs</DependentUpon>
@@ -210,10 +280,17 @@
     <EmbeddedResource Include="Reportes\Frm_Categoria.resx">
       <DependentUpon>Frm_Categoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_Proveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Ciudad.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Departamento.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Almacenes.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Rubro.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Unidad_Medida.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Categoria.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Marca.rdlc" />
+    <EmbeddedResource Include="Rubros.resx">
+      <DependentUpon>Rubros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UnidadMedidas.resx">
       <DependentUpon>UnidadMedidas.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,0 +1,28 @@
+create table categoria(
+cod_categoria int auto_increment primary key,
+descripcion varchar(40) not null,
+estado boolean default false
+);
+
+create table marcas(
+cod_marca int auto_increment primary key,
+descripcion varchar(40) not null,
+estado boolean default false
+);
+
+create table productos(
+cod_producto int auto_increment primary key,
+descripcion varchar(40) not null,
+cod_marcas int ,
+cod_unidad_medida int,
+cod_categoria int, 
+stock_minimo decimal(10,2),
+estado boolean default false
+);
+
+create table unidad_medida(
+cod_unidad_medida int auto_increment primary key,
+abreviatura_uni varchar(3) not null,
+descripcion varchar(20) not null,
+estado boolean default false
+);

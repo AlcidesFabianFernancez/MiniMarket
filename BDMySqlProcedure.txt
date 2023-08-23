@@ -1,0 +1,35 @@
+
+*/Procedimiento de lista de categoria activas*/
+
+delimiter //
+create procedure usp_listar_categoria()
+begin
+	select cod_categoria as Codigo, descripcion as Descripcion from categoria where estado = true;
+end //
+delimiter ;
+
+/////////////---------------------------------------//////////////////////////////////
+
+*/Procedimiento de guardar categorias*/
+delimiter //
+create procedure usp_guardar_ca( opcion integer, codigo integer, descripcionCa varchar(40), estadoCa boolean)
+begin
+	if opcion=0 then
+		insert into categoria(descripcion, estado) values(descripcionCa, estadoCa);
+		select "SE ha agregado correctamnente categoria" as mensaje;
+    else
+		update categoria set descripcion= descripcionCa, estado=estadoCa where cod_categoria= codigo;
+        select "SE ha actualizado correctamnente categoria" as mensaje;
+	end if;
+end //
+delimiter ;
+
+////////////////--------------------------------///////////////////////////////////
+
+*/Lista categoria por descripcion*/
+delimiter //
+create procedure usp_listar_categoriaxdescripcion(valor varchar(30))
+begin
+	select cod_categoria as Codigo, descripcion as Descripcion from categoria where  descripcion like CONCAT('%', valor , '%') and estado = true;
+end //
+delimiter ;

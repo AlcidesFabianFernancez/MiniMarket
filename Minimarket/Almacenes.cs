@@ -37,7 +37,7 @@ namespace Minimarket
 
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
-            buscar();
+            //buscar();
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)

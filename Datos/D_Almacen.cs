@@ -164,7 +164,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_listar_almacenesxdescripcion", mysql);
+                MySqlCommand command = new MySqlCommand("usp_listado_almacen", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("valor", MySqlDbType.VarChar).Value = valor;
                 //mysql.Open();

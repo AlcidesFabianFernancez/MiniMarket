@@ -155,7 +155,7 @@ namespace Minimarket
         //enter en txtBuscar
         private void txtBuscar_Enter(object sender, EventArgs e)
         {
-            buscar();
+            //buscar();
         }
 
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
@@ -191,7 +191,15 @@ namespace Minimarket
         //Cargar siguiente codigo Categoria
         private void cargarCod()
         {
-            txtCodigo.Text = N_Categoria.sgteCod();
+            String codi = N_Categoria.sgteCod();
+            if (codi == "")
+            {
+                txtCodigo.Text = "1";
+            }
+            else
+            {
+                txtCodigo.Text = N_Categoria.sgteCod();
+            }
         }
 
         //limpiar

@@ -111,6 +111,62 @@ namespace Minimarket
                         MessageBox.Show(ex.Message + ex.StackTrace);
                     }
                     break;
+                case 3:
+                    lblTitulo.Text = "Departamento";
+                    lblTitulo.Location = new Point(170, 10);
+                    try
+                    {
+                        dgv_principal.DataSource = N_Ciudad.listado_Descripcion_edpa("");
+                        dgv_principal.Columns[1].Visible = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                    break;
+                case 4:
+                    lblTitulo.Text = "Tipo Documento";
+                    lblTitulo.Location = new Point(170, 10);
+                    try
+                    {
+                        dgv_principal.DataSource = N_Proveedor.listado_Tipo_Doc("");
+                        dgv_principal.Columns[1].Visible = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                    break;
+                case 5:
+                    lblTitulo.Text = "Ciudad";
+                    lblTitulo.Location = new Point(170, 10);
+                    try
+                    {
+                        dgv_principal.DataSource = N_Proveedor.listado_ciudad("");
+                        dgv_principal.Columns[1].Visible = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                    break;
+                case 6:
+                    lblTitulo.Text = "Rubro";
+                    lblTitulo.Location = new Point(170, 10);
+                    try
+                    {
+                        dgv_principal.DataSource = N_Proveedor.listado_rubro("");
+                        dgv_principal.Columns[1].Visible = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                    break;
             }
            
         }
@@ -145,11 +201,63 @@ namespace Minimarket
                     MessageBox.Show(ex.Message + ex.StackTrace);
                 }
             }
-            else
+            else if(opcion==2)
             {
                 try
                 {
                     dgv_principal.DataSource = N_Producto.listar_Decripcion_ca(this.txtBuscar.Text.Trim());
+                    dgv_principal.Columns[1].Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
+            else if(opcion== 3)
+            {
+                try
+                {
+                    dgv_principal.DataSource = N_Ciudad.listado_Descripcion_edpa(this.txtBuscar.Text.Trim());
+                    dgv_principal.Columns[1].Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
+            else if (opcion == 4)
+            {
+                try
+                {
+                    dgv_principal.DataSource = N_Proveedor.listado_Tipo_Doc(this.txtBuscar.Text.Trim());
+                    dgv_principal.Columns[1].Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
+            else if (opcion == 5)
+            {
+                try
+                {
+                    dgv_principal.DataSource = N_Proveedor.listado_ciudad(this.txtBuscar.Text.Trim());
+                    dgv_principal.Columns[1].Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
+            else if (opcion == 6)
+            {
+                try
+                {
+                    dgv_principal.DataSource = N_Proveedor.listado_rubro(this.txtBuscar.Text.Trim());
                     dgv_principal.Columns[1].Visible = false;
 
                 }
@@ -170,9 +278,25 @@ namespace Minimarket
             }
             else
             {
-               Productos producto= Owner as Productos;
-                producto.cargarTxt(opcion, Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value), Convert.ToDecimal(dgv_principal.CurrentRow.Cells[1].Value));
-                this.Close();
+                if (opcion == 0 || opcion ==1 || opcion == 2)
+                {
+                    Productos producto = Owner as Productos;
+                    producto.cargarTxt(opcion, Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value), Convert.ToDecimal(dgv_principal.CurrentRow.Cells[1].Value));
+                    this.Close();
+                }
+                else if (opcion == 3)
+                {
+                    Ciudad ciudad = Owner as Ciudad;
+                    ciudad.cargarTxt(opcion, Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value), Convert.ToDecimal(dgv_principal.CurrentRow.Cells[1].Value));
+                    this.Close();
+                }
+                if (opcion == 4 || opcion == 5 || opcion == 6)
+                {
+                    Proveedores proveedor = Owner as Proveedores;
+                    proveedor.cargarTxt(opcion, Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value), Convert.ToInt32(dgv_principal.CurrentRow.Cells[1].Value));
+                    this.Close();
+                }
+
 
             }
         }
