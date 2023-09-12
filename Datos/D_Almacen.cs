@@ -62,7 +62,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_guardar_al", mysql);
+                MySqlCommand command = new MySqlCommand("usp_guardar_almacen", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = almacen.cod_almacen;
@@ -164,7 +164,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_listado_almacen", mysql);
+                MySqlCommand command = new MySqlCommand("usp_listado_almacenxdescripcion", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("valor", MySqlDbType.VarChar).Value = valor;
                 //mysql.Open();

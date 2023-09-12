@@ -66,8 +66,8 @@ namespace Datos
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = depa.cod_departamento;
-                command.Parameters.Add("descripcion", MySqlDbType.VarChar).Value = depa.descripcion;
-                command.Parameters.Add("estado", MySqlDbType.Int32).Value = 1;
+                command.Parameters.Add("descripcionDe", MySqlDbType.VarChar).Value = depa.descripcion;
+                command.Parameters.Add("estadoDe", MySqlDbType.Int32).Value = 1;
 
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS ";
             }

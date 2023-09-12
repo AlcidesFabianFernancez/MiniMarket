@@ -52,11 +52,11 @@ namespace Datos
                 mysql = Conexion.getInstancia().crearConexion();
                 MySqlCommand command = new MySqlCommand("usp_guardar_ciudad", mysql);
                 command.CommandType= CommandType.StoredProcedure;
-                command.Parameters.Add("opcion", MySqlDbType.Int64).Value= opcion;
+                command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = entidades.cod_ciudad;
-                command.Parameters.Add("descripcion", MySqlDbType.VarChar).Value = entidades.descripcion;
+                command.Parameters.Add("descripcionCi", MySqlDbType.VarChar).Value = entidades.descripcion;
                 command.Parameters.Add("codepartamento", MySqlDbType.Decimal).Value = entidades.cod_departamento;
-                command.Parameters.Add("estado", MySqlDbType.Int64).Value = 1;
+                command.Parameters.Add("estadoCi", MySqlDbType.Int64).Value = 1;
 
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS";
             }
@@ -151,9 +151,9 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_listado_ciudad", mysql);
+                MySqlCommand command = new MySqlCommand("usp_listar_ciudadxdescripcion", mysql);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("texto", MySqlDbType.VarChar).Value = valor;
+                command.Parameters.Add("valor", MySqlDbType.VarChar).Value = valor;
                 //mysql.Open();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 //resultado = command.ExecuteReader();

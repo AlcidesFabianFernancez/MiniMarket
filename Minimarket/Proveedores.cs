@@ -31,7 +31,7 @@ namespace Minimarket
         {
             loadBuscar();
             listado();
-            cargarSexo();
+            //cargarSexo();
             sigteCod();
             desactivar();
         }

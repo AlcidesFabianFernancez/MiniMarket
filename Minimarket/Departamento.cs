@@ -49,7 +49,7 @@ namespace Minimarket
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
-            cancelar();
+            //cancelar();
             listado();
         }
 

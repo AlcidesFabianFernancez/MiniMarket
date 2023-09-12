@@ -15,7 +15,7 @@ namespace Minimarket
 {
     public partial class Ciudad : Form
     {
-        int opcion = 1;
+        int opcion = 2;
         E_Ciudad entidades = new E_Ciudad();        
 
         public Ciudad()
@@ -45,7 +45,7 @@ namespace Minimarket
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            opcion= 0;
+            opcion= 1;
             txtDescripcion.Enabled = true;
             activarMantenimiento();
         }
@@ -55,7 +55,7 @@ namespace Minimarket
             guardar();
             limpiar();
             cargarCod();
-            listado();
+            //listado();
             cancelar();
         }
 
@@ -64,7 +64,7 @@ namespace Minimarket
             eliminar();
             limpiar();
             cargarCod();
-            listado();
+            //listado();
             cancelar();
         }
 
@@ -187,8 +187,7 @@ namespace Minimarket
         {
             DialogResult option;
             option = MessageBox.Show("¿ELIMINAR REGISTRO?", "AVISO DEL SISTEMA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (option == DialogResult.Yes)
-            {
+            if (option == DialogResult.Yes){
                 MessageBox.Show(N_Ciudad.eliminar(int.Parse(txtCodigo.Text)));
             }
         }
@@ -208,7 +207,7 @@ namespace Minimarket
                 this.txtDepartamento.Text= Convert.ToString(dgv_principal.CurrentRow.Cells[2].Value);
                 this.entidades.cod_departamento = Convert.ToDecimal(dgv_principal.CurrentRow.Cells[3].Value);
                 this.tbp_principal.SelectedIndex = 1;
-                opcion = 1;
+                opcion = 2;
                 activarMantenimiento();
 
             }

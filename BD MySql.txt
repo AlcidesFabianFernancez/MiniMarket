@@ -26,3 +26,22 @@ abreviatura_uni varchar(3) not null,
 descripcion varchar(20) not null,
 estado boolean default false
 );
+
+create table departamento(
+cod_departamento int auto_increment primary key,
+descripcion varchar(40) not null,
+estado boolean default false
+);
+
+create table ciudad(
+cod_ciudad int auto_increment primary key,
+descripcion varchar(40) not null,
+cod_departamento int not null,
+estado boolean default false
+);
+
+create table almacen(
+cod_almacen integer auto_increment primary key,
+descripcion varchar(100) not null,
+estado boolean default false
+);

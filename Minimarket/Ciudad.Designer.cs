@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tbp_mantenimiento = new System.Windows.Forms.TabPage();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnDepartamento = new System.Windows.Forms.Button();
             this.txtDepartamento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.tbp_principal.SuspendLayout();
             this.tbp_listado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_principal)).BeginInit();
@@ -159,6 +159,14 @@
             this.tbp_mantenimiento.Text = "Mantenimiento";
             this.tbp_mantenimiento.UseVisualStyleBackColor = true;
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDescripcion.Location = new System.Drawing.Point(112, 57);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(182, 20);
+            this.txtDescripcion.TabIndex = 14;
+            // 
             // btnDepartamento
             // 
             this.btnDepartamento.Enabled = false;
@@ -172,6 +180,7 @@
             // 
             // txtDepartamento
             // 
+            this.txtDepartamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDepartamento.Enabled = false;
             this.txtDepartamento.Location = new System.Drawing.Point(112, 110);
             this.txtDepartamento.Name = "txtDepartamento";
@@ -260,6 +269,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(91, 15);
             this.txtCodigo.Name = "txtCodigo";
@@ -304,13 +314,6 @@
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(112, 57);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(182, 20);
-            this.txtDescripcion.TabIndex = 14;
             // 
             // Ciudad
             // 

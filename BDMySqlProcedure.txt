@@ -33,3 +33,14 @@ begin
 	select cod_categoria as Codigo, descripcion as Descripcion from categoria where  descripcion like CONCAT('%', valor , '%') and estado = true;
 end //
 delimiter ;
+
+
+
+
+////////////////-----------------------------////////////////////////////////////////
+delimiter // 
+create procedure usp_eliminar_categoria(codigo integer)
+begin
+	delete from categoria where cod_categoria = codigo;
+end //
+delimiter ;

@@ -204,7 +204,7 @@ namespace Datos
             MySqlConnection mysql = new MySqlConnection();
             try
             {
-                string sql = "select cod_sexo, descripcion from sexo";
+                string sql = "select cod_sexo, descripcion from sexo estado = true";
                 mysql = Conexion.getInstancia().crearConexion();
                 MySqlCommand command = new MySqlCommand(sql, mysql);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);

@@ -54,7 +54,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_guardar_ca", mysql);
+                MySqlCommand command = new MySqlCommand("usp_guardar_categoria", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = categoria.cod_categoria;
