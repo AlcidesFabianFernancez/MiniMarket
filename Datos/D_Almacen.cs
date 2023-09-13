@@ -66,8 +66,8 @@ namespace Datos
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = almacen.cod_almacen;
-                command.Parameters.Add("descripcion", MySqlDbType.VarChar).Value = almacen.descripcion;
-                command.Parameters.Add("estado", MySqlDbType.Int32).Value = 1;
+                command.Parameters.Add("descripcionAl", MySqlDbType.VarChar).Value = almacen.descripcion;
+                command.Parameters.Add("estadoAl", MySqlDbType.Int32).Value = 1;
 
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS ";
             }
@@ -94,7 +94,7 @@ namespace Datos
             MySqlConnection mysql = new MySqlConnection();
             try
             {
-                string sql = "select max(cod_almacen)+1 as codigo from almacenes";
+                string sql = "select max(cod_almacen)+1 as codigo from almacen";
                 mysql = Conexion.getInstancia().crearConexion();
                 MySqlCommand command = new MySqlCommand(sql, mysql);
                 var reader = command.ExecuteReader();
@@ -164,7 +164,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_listado_almacenxdescripcion", mysql);
+                MySqlCommand command = new MySqlCommand("usp_listado_alamcenxdescripcion", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("valor", MySqlDbType.VarChar).Value = valor;
                 //mysql.Open();

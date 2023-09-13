@@ -59,7 +59,10 @@ namespace Minimarket
             guardar();
             limpliar();
             cancelar();
+            cargarCod();
             listado();
+            
+           
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -73,6 +76,7 @@ namespace Minimarket
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             cancelar();
+            limpliar();
             listado();
         }
 
@@ -111,7 +115,13 @@ namespace Minimarket
         //Cargar siguiente codigo Categoria
         private void cargarCod()
         {
-            txtCodigo.Text = N_Almacenes.sgteCod();
+            if(N_Almacenes.sgteCod() == ""){
+                txtCodigo.Text = "1";
+            }
+            else
+            {
+                txtCodigo.Text = N_Almacenes.sgteCod();
+            }
         }
 
         //limpiar
@@ -200,6 +210,7 @@ namespace Minimarket
             try
             {
                 dgv_principal.DataSource = N_Almacenes.listado();
+                dgv_principal.Columns[2].Visible = false; ///no se ve la ultima columna
             }
             catch (Exception ex)
             {
@@ -210,7 +221,7 @@ namespace Minimarket
         private void cancelar()
         {
             this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
+            //this.txtDescripcion.ReadOnly = true;
         }
 
 

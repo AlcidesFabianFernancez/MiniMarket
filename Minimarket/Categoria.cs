@@ -21,10 +21,7 @@ namespace Minimarket
         public Categoria()
         {
             InitializeComponent();
-            txtCodigo.Enabled = false;
-            txtDescripcion.Enabled = false;
-            btnGuardar.Enabled = false;
-            btnEliminar.Enabled = false;
+            limpliar();
             
         }
         private void Categoria_Load(object sender, EventArgs e)
@@ -63,85 +60,32 @@ namespace Minimarket
         //Boton Guardar
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (validar())
-            {
-                E_Categoria entidades = new E_Categoria();
-                string rsta = "";
-                entidades.cod_categoria = int.Parse(txtCodigo.Text.Trim());
-                entidades.descripcion = txtDescripcion.Text.Trim();
-
-                rsta = N_Categoria.guardarActualizar(this.opcion, entidades);
-                MessageBox.Show(rsta);
-                limpliar();
-                this.tbp_principal.SelectedIndex = 0;
-                listadoCategoria();
-                this.tbp_principal.SelectedIndex = 0;
-                this.txtDescripcion.ReadOnly = true;
-            }
-            txtDescripcion.Focus(); 
+            guardar();
+            limpliar();
+            listadoCategoria();
+            cancelar();
+            
            
         }
         //Boton Cancelar
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
-
+            limpliar();
+            listadoCategoria();
+            cancelar();          
         }
 
         //Boton eliminar
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-            DialogResult option;
-            option = MessageBox.Show("¿ELIMINAR REISTRO?", "AVISO DEL SISTEMA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (option == DialogResult.Yes)
-            {
-
-                MessageBox.Show(N_Categoria.eliminar(this.Codigo_ca));
-                listadoCategoria();
-                this.tbp_principal.SelectedIndex = 0;
-                this.tbp_principal.SelectedIndex = 0;
-                this.txtDescripcion.ReadOnly = true;
-                limpliar();
-            }
+            eliminar();
+            limpliar();
+            listadoCategoria();
+            cancelar();
 
         }
 
-        //Cargamos el datagridView
-        private void listadoCategoria()
-        {
-
-            try
-            {
-                this.dgv_principal.DataSource = N_Categoria.listarCategoria();
-                //this.dgv_principal.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message + e.StackTrace);
-            }
-        }
-
-        //seleccionamos una fila
-        private void selectionItems()
-        {
-            ///int valor = Convert.ToInt64(dgv_principal.CurrentRow.Cells[0].Value);
-            if (string.IsNullOrEmpty(Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value)))
-            {
-                MessageBox.Show("CELDA VACIA");
-            }
-            else
-            {
-                this.txtCodigo.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value);
-                this.txtDescripcion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[1].Value);
-                this.Codigo_ca= int.Parse(Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value));
-                this.tbp_principal.SelectedIndex = 1;
-                opcion = 1;
-                activarMantenimiento();
-                
-            }
-        }
+       
 
        
 
@@ -174,7 +118,7 @@ namespace Minimarket
         }
         #endregion
 
-        #region"Mantenimiento"
+        #region"Private Metods"
 
         //Metodo Validar
         private bool validar()
@@ -236,6 +180,78 @@ namespace Minimarket
             }
         }
 
+
+        private void cancelar()
+        {
+            this.tbp_principal.SelectedIndex = 0;
+        }
+
+
+        private void guardar()
+        {
+            if (validar())
+            {
+                E_Categoria entidades = new E_Categoria();
+                string rsta = "";
+                entidades.cod_categoria = int.Parse(txtCodigo.Text.Trim());
+                entidades.descripcion = txtDescripcion.Text.Trim();
+
+                rsta = N_Categoria.guardarActualizar(this.opcion, entidades);
+                MessageBox.Show(rsta);
+            }
+            txtDescripcion.Focus();
+        }
+
+        private void eliminar()
+        {
+            DialogResult option;
+            option = MessageBox.Show("¿ELIMINAR REISTRO?", "AVISO DEL SISTEMA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (option == DialogResult.Yes)
+            {
+
+                MessageBox.Show(N_Categoria.eliminar(this.Codigo_ca));
+                listadoCategoria();
+                this.tbp_principal.SelectedIndex = 0;
+                this.tbp_principal.SelectedIndex = 0;
+                this.txtDescripcion.ReadOnly = true;
+                limpliar();
+            }
+        }
+
+        //Cargamos el datagridView
+        private void listadoCategoria()
+        {
+
+            try
+            {
+                this.dgv_principal.DataSource = N_Categoria.listarCategoria();
+                //this.dgv_principal.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message + e.StackTrace);
+            }
+        }
+
+        //seleccionamos una fila
+        private void selectionItems()
+        {
+            ///int valor = Convert.ToInt64(dgv_principal.CurrentRow.Cells[0].Value);
+            if (string.IsNullOrEmpty(Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value)))
+            {
+                MessageBox.Show("CELDA VACIA");
+            }
+            else
+            {
+                this.txtCodigo.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value);
+                this.txtDescripcion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[1].Value);
+                this.Codigo_ca = int.Parse(Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value));
+                this.tbp_principal.SelectedIndex = 1;
+                opcion = 1;
+                activarMantenimiento();
+
+            }
+        }
 
 
 
