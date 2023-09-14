@@ -123,7 +123,15 @@ namespace Minimarket
         //Cargar siguiente codigo Categoria
         private void cargarCod()
         {
-            txtCodigo.Text = N_Marca.sgteCod();
+            string valor = N_Marca.sgteCod();
+            if (valor == "")
+            {
+                txtCodigo.Text = "1";
+            }
+            else
+            {
+                txtCodigo.Text = N_Marca.sgteCod();
+            }            
         }
 
         //limpiar
@@ -214,7 +222,6 @@ namespace Minimarket
         private void cancelar()
         {
             this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
         }
 
 
@@ -223,6 +230,7 @@ namespace Minimarket
             try
             {
                 dgv_principal.DataSource = N_Marca.listarMarca();
+                dgv_principal.Columns[2].Visible = false;
             }
             catch (Exception ex)
             {

@@ -15,7 +15,7 @@ namespace Minimarket
 {
     public partial class Ciudad : Form
     {
-        int opcion = 2;
+        int opcion = 1;
         E_Ciudad entidades = new E_Ciudad();        
 
         public Ciudad()
@@ -45,7 +45,7 @@ namespace Minimarket
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            opcion= 1;
+            opcion= 0;
             txtDescripcion.Enabled = true;
             activarMantenimiento();
         }
@@ -55,7 +55,7 @@ namespace Minimarket
             guardar();
             limpiar();
             cargarCod();
-            //listado();
+            listado();
             cancelar();
         }
 
@@ -64,7 +64,7 @@ namespace Minimarket
             eliminar();
             limpiar();
             cargarCod();
-            //listado();
+            listado();
             cancelar();
         }
 
@@ -244,7 +244,6 @@ namespace Minimarket
             {
                 txtDepartamento.Text = valor;
                 this.entidades.cod_departamento = codigo;
-
             }
         }
 

@@ -60,12 +60,12 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_guardar_ma", mysql);
+                MySqlCommand command = new MySqlCommand("usp_guardar_marcas", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = marca.cod_marca;
-                command.Parameters.Add("descripcionCa", MySqlDbType.VarChar).Value = marca.descripcion;
-                command.Parameters.Add("estadoCa", MySqlDbType.Int32).Value = 1;
+                command.Parameters.Add("descripcionMa", MySqlDbType.VarChar).Value = marca.descripcion;
+                command.Parameters.Add("estadoMa", MySqlDbType.Int32).Value = 1;
 
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS ";
             }

@@ -49,7 +49,7 @@ namespace Minimarket
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
-            //cancelar();
+            cancelar();
             listado();
         }
 
@@ -213,7 +213,6 @@ namespace Minimarket
         private void cancelar()
         {
             this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
         }
 
 

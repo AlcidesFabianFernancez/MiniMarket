@@ -57,6 +57,7 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBuscar.Location = new System.Drawing.Point(64, 59);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(146, 20);

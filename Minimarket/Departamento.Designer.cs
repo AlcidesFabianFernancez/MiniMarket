@@ -106,6 +106,7 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBuscar.Location = new System.Drawing.Point(86, 10);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(255, 20);
@@ -215,6 +216,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(91, 60);
             this.txtDescripcion.Name = "txtDescripcion";
