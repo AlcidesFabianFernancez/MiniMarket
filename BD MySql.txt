@@ -33,15 +33,99 @@ descripcion varchar(40) not null,
 estado boolean default false
 );
 
-create table ciudad(
-cod_ciudad int auto_increment primary key,
-descripcion varchar(40) not null,
-cod_departamento int not null,
-estado boolean default false
-);
+CREATE TABLE `ciudad` (
+  `cod_ciudad` int NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(40) NOT NULL,
+  `cod_departamento` int NOT NULL,
+  `estado` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`cod_ciudad`),
+  KEY `fk_departamento` (`cod_departamento`),
+  CONSTRAINT `fk_departamento` 
+FOREIGN KEY (`cod_departamento`) 
+REFERENCES `departamento` (`cod_departamento`)
 
 create table almacen(
 cod_almacen integer auto_increment primary key,
 descripcion varchar(100) not null,
 estado boolean default false
+);
+
+create table rubros(
+cod_rubro int auto_increment primary key,
+descripcion varchar(60),
+estado boolean default true
+);
+
+
+create table tipo_documento_pv_cl(
+cod_tipo_documento_pv_cl int auto_increment primary key,
+descripcion varchar(30),
+estado boolean default true
+);
+
+
+CREATE TABLE `productos` (
+  `cod_producto` int NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(80) NOT NULL,
+  `cod_marcas` int DEFAULT NULL,
+  `cod_unidad_medida` int DEFAULT NULL,
+  `cod_categoria` int DEFAULT NULL,
+  `stock_minimo` decimal(10,2) DEFAULT NULL,
+  `estado` tinyint(1) DEFAULT '0',
+  `fecha_creacion` datetime DEFAULT NULL,
+  `fecha_modficacion` datetime DEFAULT NULL,
+  PRIMARY KEY (`cod_producto`),
+  KEY `fk_marcas` (`cod_marcas`),
+  KEY `fk_uni_medida` (`cod_unidad_medida`),
+  KEY `fk_categoria` (`cod_categoria`),
+  CONSTRAINT `fk_categoria` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`),
+  CONSTRAINT `fk_marcas` FOREIGN KEY (`cod_marcas`) REFERENCES `marcas` (`cod_marca`),
+  CONSTRAINT `fk_uni_medida` FOREIGN KEY (`cod_unidad_medida`) REFERENCES `unidad_medida` (`cod_unidad_medida`));
+
+CREATE TABLE tipo_documento_emitir (
+  cod_tipo_documento_emitir int NOT NULL AUTO_INCREMENT,
+  descripcion varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`cod_tipo_documento_emitir`)
+) 
+  
+
+create table proveedores(
+cod_proveedor int auto_increment primary key,
+cod_tipo_documento_pv_cl int,
+numero_doc varchar(20),
+razon_social varchar(150),
+nombres varchar(100),
+apellidos varchar(100),
+cod_sexo int,
+cod_rubro int,
+email varchar(150),
+telefono varchar(20),
+movil varchar(20),
+direccion text,
+cod_barrio int,
+observacion text,
+fecha_creacion datetime,
+fecha_modificacion datetime,
+estado boolean,
+constraint fk_cod_tipo_dpc
+foreign key(cod_tipo_documento_pv_cl)
+references tipo_documento_pv_cl(cod_tipo_documento_pv_cl),
+constraint fk_cod_sex
+foreign key(cod_sexo)
+references sexo(cod_sexo),
+constraint fk_cod_rubroo
+foreign key(cod_rubro)
+references rubros(cod_rubro),
+constraint fk_cod_barrio
+foreign key(cod_barrio)
+references barrio(cod_barrio)
+);
+
+create table barrio(
+cod_barrio int auto_increment primary key,
+descripcion varchar(40) not null,
+cod_ciudad int not null,
+constraint fk_ciudad
+foreign key(cod_ciudad)
+references ciudad(cod_ciudad)
 );

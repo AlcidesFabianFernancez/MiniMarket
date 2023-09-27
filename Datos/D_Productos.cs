@@ -60,17 +60,16 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_guardar_pro", mysql);
+                MySqlCommand command = new MySqlCommand("usp_guardar_producto", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo_pro", MySqlDbType.Int64).Value = entidades.codigo;
-                command.Parameters.Add("descripcion", MySqlDbType.VarChar).Value = entidades.descripcion;
+                command.Parameters.Add("descripcionm", MySqlDbType.VarChar).Value = entidades.descripcion;
                 command.Parameters.Add("codigo_marca", MySqlDbType.Int64).Value = entidades.cod_marcas;
                 command.Parameters.Add("codigo_uni", MySqlDbType.Int64).Value = entidades.cod_medidas;
                 command.Parameters.Add("codigo_categoria", MySqlDbType.Int64).Value = entidades.cod_categoria;
                 command.Parameters.Add("stock_min", MySqlDbType.Decimal).Value = entidades.stock_minimo;
-                command.Parameters.Add("stock_max", MySqlDbType.Decimal).Value = entidades.stock_maximo;
-                command.Parameters.Add("estado", MySqlDbType.Int32).Value = 1;
+                command.Parameters.Add("estadom", MySqlDbType.Int32).Value = 1;
 
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS ";
             }

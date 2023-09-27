@@ -39,8 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tbp_mantenimiento = new System.Windows.Forms.TabPage();
-            this.txtStockMaximo = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.gbStock = new System.Windows.Forms.GroupBox();
+            this.dgv_StockProducto = new System.Windows.Forms.DataGridView();
             this.txtStockMinimo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCategoria = new System.Windows.Forms.TextBox();
@@ -62,8 +62,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.gbStock = new System.Windows.Forms.GroupBox();
-            this.dgv_StockProducto = new System.Windows.Forms.DataGridView();
             this.tbp_principal.SuspendLayout();
             this.tbp_listado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_principal)).BeginInit();
@@ -124,6 +122,7 @@
             // 
             // txtBuscar
             // 
+            this.txtBuscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBuscar.Location = new System.Drawing.Point(86, 10);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(255, 20);
@@ -157,8 +156,6 @@
             // tbp_mantenimiento
             // 
             this.tbp_mantenimiento.Controls.Add(this.gbStock);
-            this.tbp_mantenimiento.Controls.Add(this.txtStockMaximo);
-            this.tbp_mantenimiento.Controls.Add(this.label9);
             this.tbp_mantenimiento.Controls.Add(this.txtStockMinimo);
             this.tbp_mantenimiento.Controls.Add(this.label8);
             this.tbp_mantenimiento.Controls.Add(this.txtCategoria);
@@ -186,22 +183,32 @@
             this.tbp_mantenimiento.Text = "Mantenimiento";
             this.tbp_mantenimiento.UseVisualStyleBackColor = true;
             // 
-            // txtStockMaximo
+            // gbStock
             // 
-            this.txtStockMaximo.Location = new System.Drawing.Point(165, 249);
-            this.txtStockMaximo.Name = "txtStockMaximo";
-            this.txtStockMaximo.Size = new System.Drawing.Size(76, 20);
-            this.txtStockMaximo.TabIndex = 10;
-            this.txtStockMaximo.Text = "0";
+            this.gbStock.Controls.Add(this.dgv_StockProducto);
+            this.gbStock.Location = new System.Drawing.Point(313, 21);
+            this.gbStock.Name = "gbStock";
+            this.gbStock.Size = new System.Drawing.Size(295, 263);
+            this.gbStock.TabIndex = 24;
+            this.gbStock.TabStop = false;
+            this.gbStock.Text = "Stock Producto";
+            this.gbStock.Visible = false;
             // 
-            // label9
+            // dgv_StockProducto
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(162, 231);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 13);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Stock Maximo(*)";
+            this.dgv_StockProducto.AllowUserToAddRows = false;
+            this.dgv_StockProducto.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_StockProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_StockProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_StockProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_StockProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_StockProducto.Enabled = false;
+            this.dgv_StockProducto.Location = new System.Drawing.Point(6, 19);
+            this.dgv_StockProducto.Name = "dgv_StockProducto";
+            this.dgv_StockProducto.ReadOnly = true;
+            this.dgv_StockProducto.Size = new System.Drawing.Size(283, 229);
+            this.dgv_StockProducto.TabIndex = 24;
             // 
             // txtStockMinimo
             // 
@@ -222,6 +229,7 @@
             // 
             // txtCategoria
             // 
+            this.txtCategoria.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCategoria.Enabled = false;
             this.txtCategoria.Location = new System.Drawing.Point(86, 194);
             this.txtCategoria.Name = "txtCategoria";
@@ -239,6 +247,7 @@
             // 
             // txtMedida
             // 
+            this.txtMedida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMedida.Enabled = false;
             this.txtMedida.Location = new System.Drawing.Point(86, 147);
             this.txtMedida.Name = "txtMedida";
@@ -256,6 +265,7 @@
             // 
             // txtMarca
             // 
+            this.txtMarca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMarca.Enabled = false;
             this.txtMarca.Location = new System.Drawing.Point(86, 100);
             this.txtMarca.Name = "txtMarca";
@@ -273,6 +283,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.Location = new System.Drawing.Point(86, 57);
             this.txtDescripcion.MaxLength = 30;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -425,33 +436,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // gbStock
-            // 
-            this.gbStock.Controls.Add(this.dgv_StockProducto);
-            this.gbStock.Location = new System.Drawing.Point(313, 21);
-            this.gbStock.Name = "gbStock";
-            this.gbStock.Size = new System.Drawing.Size(295, 263);
-            this.gbStock.TabIndex = 24;
-            this.gbStock.TabStop = false;
-            this.gbStock.Text = "Stock Producto";
-            this.gbStock.Visible = false;
-            // 
-            // dgv_StockProducto
-            // 
-            this.dgv_StockProducto.AllowUserToAddRows = false;
-            this.dgv_StockProducto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgv_StockProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_StockProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_StockProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgv_StockProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_StockProducto.Enabled = false;
-            this.dgv_StockProducto.Location = new System.Drawing.Point(6, 19);
-            this.dgv_StockProducto.Name = "dgv_StockProducto";
-            this.dgv_StockProducto.ReadOnly = true;
-            this.dgv_StockProducto.Size = new System.Drawing.Size(283, 229);
-            this.dgv_StockProducto.TabIndex = 24;
-            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,8 +486,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnMarca;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtStockMaximo;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtStockMinimo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCategoria;

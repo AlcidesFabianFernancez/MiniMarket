@@ -29,7 +29,6 @@ namespace Minimarket
             listado();
             limpiar();
             txtStockMinimo.Text = "0";
-            txtStockMaximo.Text = "0";
         }
 
         private void txtBuscar_Enter(object sender, EventArgs e)
@@ -135,7 +134,6 @@ namespace Minimarket
                 txtCategoria.Text == String.Empty ||
                 txtMarca.Text == String.Empty ||
                 txtMedida.Text == String.Empty ||
-                txtStockMaximo.Text == String.Empty ||
                 txtStockMinimo.Text == String.Empty)          
             {
                 MessageBox.Show("Debe cargar los datos (*)", "Aviso del Sistema", MessageBoxButtons.OK);
@@ -167,8 +165,6 @@ namespace Minimarket
             this.txtDescripcion.Enabled = false;
             this.txtStockMinimo.Text = "";
             this.txtStockMinimo.Enabled = false;
-            this.txtStockMaximo.Text = "";
-            this.txtStockMaximo.Enabled = false;
             
             this.btnCategoria.Enabled = false;
             this.btnMarca.Enabled = false;
@@ -182,7 +178,6 @@ namespace Minimarket
         {
             this.txtDescripcion.Enabled = true;
             this.txtDescripcion.Focus();
-            this.txtStockMaximo.Enabled=true;
             this.txtStockMinimo.Enabled=true;
             this.btnGuardar.Enabled = true;
             this.btnEliminar.Enabled = true;
@@ -200,9 +195,9 @@ namespace Minimarket
             try
             {
                 dgv_principal.DataSource = N_Producto.listar_Decripcion(this.txtBuscar.Text.Trim());
-                dgv_principal.Columns[7].Visible= false;
+                dgv_principal.Columns[6].Visible= false;
+                dgv_principal.Columns[7].Visible = false;
                 dgv_principal.Columns[8].Visible = false;
-                dgv_principal.Columns[9].Visible = false;
 
             }
             catch (Exception ex)
@@ -216,9 +211,9 @@ namespace Minimarket
             try
             {
                 dgv_principal.DataSource = N_Producto.listado();
+                dgv_principal.Columns[6].Visible = false;
                 dgv_principal.Columns[7].Visible = false;
                 dgv_principal.Columns[8].Visible = false;
-                dgv_principal.Columns[9].Visible = false;
 
             }
             catch (Exception ex)
@@ -234,7 +229,6 @@ namespace Minimarket
             {
                 this.entidades.codigo = int.Parse(txtCodigo.Text.Trim());
                 this.entidades.descripcion = txtDescripcion.Text.Trim();
-                this.entidades.stock_maximo = Convert.ToDecimal(txtStockMaximo.Text.Trim());
                 this.entidades.stock_minimo = Convert.ToDecimal(txtStockMinimo.Text.Trim());
                 String mensaje = N_Producto.guardarActualizar(this.opcion, entidades);
                 limpiar();
@@ -273,10 +267,9 @@ namespace Minimarket
                 this.txtMedida.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[3].Value);
                 this.txtCategoria.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[4].Value);
                 this.txtStockMinimo.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[5].Value);
-                this.txtStockMaximo.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[6].Value);
-                this.entidades.cod_marcas= Convert.ToDecimal(dgv_principal.CurrentRow.Cells[7].Value);
-                this.entidades.cod_medidas= Convert.ToDecimal(dgv_principal.CurrentRow.Cells[8].Value);
-                this.entidades.cod_categoria= Convert.ToDecimal(dgv_principal.CurrentRow.Cells[9].Value);
+                this.entidades.cod_marcas= Convert.ToDecimal(dgv_principal.CurrentRow.Cells[6].Value);
+                this.entidades.cod_medidas= Convert.ToDecimal(dgv_principal.CurrentRow.Cells[7].Value);
+                this.entidades.cod_categoria= Convert.ToDecimal(dgv_principal.CurrentRow.Cells[8].Value);
                 this.tbp_principal.SelectedIndex = 1;
                 opcion = 1;
                 activarMantenimiento();
