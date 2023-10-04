@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="N_Almacenes.cs" />
+    <Compile Include="N_Barrio.cs" />
     <Compile Include="N_Categoria.cs" />
     <Compile Include="N_Ciudad.cs" />
     <Compile Include="N_Departamento.cs" />

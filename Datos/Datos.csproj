@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="D_Almacen.cs" />
+    <Compile Include="D_Barrio.cs" />
     <Compile Include="D_Categoria.cs" />
     <Compile Include="D_Ciudad.cs" />
     <Compile Include="D_Departamento.cs" />

@@ -85,6 +85,7 @@ CREATE TABLE `productos` (
 CREATE TABLE tipo_documento_emitir (
   cod_tipo_documento_emitir int NOT NULL AUTO_INCREMENT,
   descripcion varchar(60) DEFAULT NULL,
+  estado boolean,
   PRIMARY KEY (`cod_tipo_documento_emitir`)
 ) 
   
@@ -128,4 +129,40 @@ cod_ciudad int not null,
 constraint fk_ciudad
 foreign key(cod_ciudad)
 references ciudad(cod_ciudad)
+);
+
+create table entrada_producto(
+cod_entrada_producto int auto_increment primary key,
+cod_tipo_documento_emitir int,
+nro_documento varchar(30),
+cod_proveedor int,
+cod_almacen int,
+fecha_entrada datetime,
+observacion text,
+subtotal decimal(10,2),
+iva decimal(10,2),
+total_importe decimal(10,2),
+fecha_creacion datetime,
+estado boolean, 
+constraint fk_cod_tipo_doc
+foreign key(cod_tipo_documento_emitir)
+references tipo_documento_emitir(cod_tipo_documento_emitir),
+constraint fk_cod_proveedor
+foreign key(cod_proveedor)
+references proveedores(cod_proveedor),
+constraint fk_cod_almacen
+foreign key(cod_almacen)
+references almacen(cod_almacen)
+);
+
+create table entrada_producto_detalle(
+cod_entrada_producto int,
+cod_producto int,
+cantidad decimal(10,2),
+precio_unirio_compra decimal(10,2),
+total decimal(10,2),
+constraint fk_cod_entrada_producto foreign key(cod_entrada_producto) 
+references entrada_producto(cod_entrada_producto),
+constraint fk_cod_producto foreign key(cod_producto)
+references productos(cod_producto)
 );

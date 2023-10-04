@@ -76,14 +76,15 @@ namespace Datos
                 command.Parameters.Add("telefono", MySqlDbType.VarChar).Value = entidades.telefono;
                 command.Parameters.Add("movil", MySqlDbType.VarChar).Value = entidades.movil;
                 command.Parameters.Add("direccion", MySqlDbType.VarChar).Value = entidades.direccion;
-                command.Parameters.Add("cod_ciudad", MySqlDbType.VarChar).Value = entidades.cod_ciudad;
+                command.Parameters.Add("cod_barrio", MySqlDbType.VarChar).Value = entidades.cod_ciudad;
                 command.Parameters.Add("observacion", MySqlDbType.VarChar).Value = entidades.observacion;
+                command.Parameters.Add("estado", MySqlDbType.Int32).Value = 1;
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS ";
             }
             catch (Exception e)
             {
 
-                mensaje = "ERROR guardarActualizacion " + e;
+                mensaje = "ERROR guardarActualizacion PROVEEDOR" + e;
             }
             finally
             {
@@ -103,7 +104,7 @@ namespace Datos
             MySqlConnection mysql = new MySqlConnection();
             try
             {
-                string sql = "select max(cod_proveedor)+1 as codigo from proveedor;";
+                string sql = "select max(cod_proveedor)+1 as codigo from proveedores;";
                 mysql = Conexion.getInstancia().crearConexion();
                 MySqlCommand command = new MySqlCommand(sql, mysql);
                 var reader = command.ExecuteReader();
@@ -115,7 +116,7 @@ namespace Datos
             }
             catch (Exception e)
             {
-                valor = "ERROR " + e;
+                valor = "ERROR SIGUIENTE CODIGO " + e;
             }
             finally
             {
@@ -138,7 +139,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_eliminar_almacen", mysql);
+                MySqlCommand command = new MySqlCommand("usp_eliminar_proveedor", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = codigo;
 
@@ -147,7 +148,7 @@ namespace Datos
             catch (Exception e)
             {
 
-                mensaje = "ERROR eliminar " + e;
+                mensaje = "ERROR ELIMINAR " + e;
             }
             finally
             {
@@ -173,7 +174,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_listado_proveedor", mysql);
+                MySqlCommand command = new MySqlCommand("usp_listado_proveedorxrazonsocial", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("texto", MySqlDbType.VarChar).Value = valor;
                 //mysql.Open();
@@ -204,7 +205,7 @@ namespace Datos
             MySqlConnection mysql = new MySqlConnection();
             try
             {
-                string sql = "select cod_sexo, descripcion from sexo estado = true";
+                string sql = "select cod_sexo, descripcion from sexo where estado =true;";
                 mysql = Conexion.getInstancia().crearConexion();
                 MySqlCommand command = new MySqlCommand(sql, mysql);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
@@ -273,7 +274,7 @@ namespace Datos
             try
             {
                 mysql = Conexion.getInstancia().crearConexion();
-                MySqlCommand command = new MySqlCommand("usp_listar_ciudad_proveedor", mysql);
+                MySqlCommand command = new MySqlCommand("usp_listar_barrio_proveedor", mysql);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("valor", MySqlDbType.VarChar).Value = valor;
                 //mysql.Open();

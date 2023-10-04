@@ -109,6 +109,12 @@
     <Compile Include="Almacenes.Designer.cs">
       <DependentUpon>Almacenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Barrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barrio.Designer.cs">
+      <DependentUpon>Barrio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Categoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </Compile>
     <EmbeddedResource Include="Almacenes.resx">
       <DependentUpon>Almacenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barrio.resx">
+      <DependentUpon>Barrio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Categoria.resx">
       <DependentUpon>Categoria.cs</DependentUpon>

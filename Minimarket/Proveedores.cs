@@ -31,7 +31,7 @@ namespace Minimarket
         {
             loadBuscar();
             listado();
-            //cargarSexo();
+            cargarSexo();
             sigteCod();
             desactivar();
         }
@@ -258,7 +258,15 @@ namespace Minimarket
 
         private void sigteCod()
         {
-            txtCodigo.Text = N_Proveedor.sgteCod();
+            string cod = N_Proveedor.sgteCod();
+            if(cod == "" || cod== null)
+            {
+                txtCodigo.Text = "1";
+            }
+            else
+            {
+                txtCodigo.Text = cod;
+            }
         }
 
         private void activar()
