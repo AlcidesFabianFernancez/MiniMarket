@@ -205,7 +205,6 @@ D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Marcas.resources
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Productos.resources
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Properties.Resources.resources
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Proveedores.resources
-D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Fmr_Marca.resources
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.FrmProveedor.resources
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Almacenes.resources
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Ciudad.resources
@@ -220,3 +219,9 @@ D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.csproj.CoreCompileI
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.csproj.CopyComplete
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.exe
 D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.pdb
+D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Barrio.resources
+D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Fmr_Barrio.resources
+D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\RdlCompile.cache
+D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\RdlCompile.compiled
+D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Marca.resources
+D:\MiniMarket\Sol_Minimarket\Minimarket\obj\Debug\Minimarket.Reportes.Frm_Productos.resources

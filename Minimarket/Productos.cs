@@ -103,7 +103,8 @@ namespace Minimarket
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-
+            Reportes.Frm_Productos ciudad = new Reportes.Frm_Productos();
+            ciudad.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -63,7 +63,7 @@ namespace Minimarket
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            Reportes.Fmr_Marca reporte = new Reportes.Fmr_Marca();
+            Reportes.Frm_Marca reporte = new Reportes.Frm_Marca();
             reporte.ShowDialog();
         }
 

@@ -11,7 +11,7 @@ namespace Entidades
 
         public int cod_barrio { get; set; }
         public String descripcion { get; set; }
-        public decimal cod_ciudad { get; set; }
+        public int cod_ciudad { get; set; }
         public bool estado { get; set; }
 
         public E_Barrio(int cod_barrio, string descripcion, int cod_ciudad, bool estado)

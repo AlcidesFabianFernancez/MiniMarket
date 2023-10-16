@@ -55,9 +55,9 @@ namespace Datos
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = entidades.cod_barrio;
-                command.Parameters.Add("descripcion", MySqlDbType.VarChar).Value = entidades.descripcion;
+                command.Parameters.Add("descripcionba", MySqlDbType.VarChar).Value = entidades.descripcion;
                 command.Parameters.Add("codciudad", MySqlDbType.Decimal).Value = entidades.cod_ciudad;
-                command.Parameters.Add("estado", MySqlDbType.Int64).Value = 1;
+                command.Parameters.Add("estadoba", MySqlDbType.Int64).Value = 1;
 
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS";
             }
@@ -119,7 +119,7 @@ namespace Datos
                 mysql = Conexion.getInstancia().crearConexion();
                 MySqlCommand command = new MySqlCommand("usp_eliminar_barrio", mysql);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add("codigo", MySqlDbType.Int64).Value = codigo;
+                command.Parameters.Add("codigo", MySqlDbType.Int32).Value = codigo;
 
                 mensaje = command.ExecuteNonQuery() == 1 ? "DATOS ELIMINADOS CORRECTAMENTE" : "NO SE HA PODIDO ELIMINAR LOS DATOS ";
             }
@@ -204,5 +204,5 @@ namespace Datos
             }
         }
     }
-}
+
 }

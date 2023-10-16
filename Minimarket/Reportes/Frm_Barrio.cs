@@ -1,36 +1,36 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using Negocio;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Reporting.WinForms;
 
 namespace Minimarket.Reportes
 {
-    public partial class Fmr_Marca : Form
+    public partial class Fmr_Barrio : Form
     {
-
-        public Fmr_Marca()
+        public Fmr_Barrio()
         {
             InitializeComponent();
         }
 
-        private void Fmr_Marca_Load(object sender, EventArgs e)
+        private void Fmr_Barrio_Load(object sender, EventArgs e)
         {
-            cargarReporte();
+
             this.reportViewer1.RefreshReport();
+            cargarReporte();
         }
 
         private void cargarReporte()
         {
             reportViewer1.LocalReport.DataSources.Clear();
 
-            ReportDataSource rp = new ReportDataSource("DataSet1", N_Marca.listarMarca());
+            ReportDataSource rp = new ReportDataSource("DataSet1", N_Barrio.listado());
 
             reportViewer1.LocalReport.DataSources.Add(rp);
             reportViewer1.RefreshReport();

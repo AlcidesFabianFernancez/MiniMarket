@@ -167,6 +167,20 @@ namespace Minimarket
                         MessageBox.Show(ex.Message + ex.StackTrace);
                     }
                     break;
+                case 7:
+                    lblTitulo.Text = "Ciudad";
+                    lblTitulo.Location = new Point(170, 10);
+                    try
+                    {
+                        dgv_principal.DataSource = N_Barrio.listado_Descripcion_edpa("");
+                        dgv_principal.Columns[1].Visible = false;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + ex.StackTrace);
+                    }
+                    break;
             }
            
         }
@@ -266,6 +280,19 @@ namespace Minimarket
                     MessageBox.Show(ex.Message + ex.StackTrace);
                 }
             }
+            else if (opcion == 7)
+            {
+                try
+                {
+                    dgv_principal.DataSource = N_Barrio.listado_Descripcion_edpa(this.txtBuscar.Text.Trim());
+                    dgv_principal.Columns[1].Visible = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + ex.StackTrace);
+                }
+            }
         }
 
         //seleccionamos una fila
@@ -290,10 +317,16 @@ namespace Minimarket
                     ciudad.cargarTxt(opcion, Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value), Convert.ToDecimal(dgv_principal.CurrentRow.Cells[1].Value));
                     this.Close();
                 }
-                if (opcion == 4 || opcion == 5 || opcion == 6)
+                else if (opcion == 4 || opcion == 5 || opcion == 6)
                 {
                     Proveedores proveedor = Owner as Proveedores;
                     proveedor.cargarTxt(opcion, Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value), Convert.ToInt32(dgv_principal.CurrentRow.Cells[1].Value));
+                    this.Close();
+                }
+                else if (opcion == 7 )
+                {
+                    Barrio barrio = Owner as Barrio;
+                    barrio.cargarTxt(opcion, Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value), Convert.ToInt32(dgv_principal.CurrentRow.Cells[1].Value));
                     this.Close();
                 }
 

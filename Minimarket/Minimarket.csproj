@@ -167,11 +167,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_MiniMarket.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Fmr_Marca.cs">
+    <Compile Include="Reportes\Frm_Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Fmr_Marca.Designer.cs">
-      <DependentUpon>Fmr_Marca.cs</DependentUpon>
+    <Compile Include="Reportes\Frm_Productos.Designer.cs">
+      <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Marca.Designer.cs">
+      <DependentUpon>Frm_Marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Barrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Barrio.Designer.cs">
+      <DependentUpon>Frm_Barrio.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\FrmProveedor.cs">
       <SubType>Form</SubType>
@@ -265,8 +277,11 @@
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Fmr_Marca.resx">
-      <DependentUpon>Fmr_Marca.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\Frm_Marca.resx">
+      <DependentUpon>Frm_Marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Barrio.resx">
+      <DependentUpon>Frm_Barrio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FrmProveedor.resx">
       <DependentUpon>FrmProveedor.cs</DependentUpon>
@@ -280,6 +295,9 @@
     <EmbeddedResource Include="Reportes\Frm_Departamento.resx">
       <DependentUpon>Frm_Departamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Productos.resx">
+      <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Rubro.resx">
       <DependentUpon>Frm_Rubro.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,14 +307,14 @@
     <EmbeddedResource Include="Reportes\Frm_Categoria.resx">
       <DependentUpon>Frm_Categoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Rpt_Proveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Almacenes.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Barrio.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Categoria.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Ciudad.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Departamento.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_Almacenes.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_Rubro.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_Unidad_Medida.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_Categoria.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Marca.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Productos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Unidad_Medida.rdlc" />
     <EmbeddedResource Include="Rubros.resx">
       <DependentUpon>Rubros.cs</DependentUpon>
     </EmbeddedResource>
