@@ -93,7 +93,7 @@ namespace Datos
             MySqlConnection mysql = new MySqlConnection();
             try
             {
-                string sql = "select max(cod_rubro)+1 as codigo from rubro";
+                string sql = "select max(cod_rubro)+1 as codigo from rubros";
                 mysql = Conexion.getInstancia().crearConexion();
                 MySqlCommand command = new MySqlCommand(sql, mysql);
                 var reader = command.ExecuteReader();

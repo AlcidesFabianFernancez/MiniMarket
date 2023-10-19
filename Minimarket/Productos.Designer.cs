@@ -188,7 +188,7 @@
             this.gbStock.Controls.Add(this.dgv_StockProducto);
             this.gbStock.Location = new System.Drawing.Point(313, 21);
             this.gbStock.Name = "gbStock";
-            this.gbStock.Size = new System.Drawing.Size(295, 263);
+            this.gbStock.Size = new System.Drawing.Size(318, 263);
             this.gbStock.TabIndex = 24;
             this.gbStock.TabStop = false;
             this.gbStock.Text = "Stock Producto";
@@ -207,7 +207,7 @@
             this.dgv_StockProducto.Location = new System.Drawing.Point(6, 19);
             this.dgv_StockProducto.Name = "dgv_StockProducto";
             this.dgv_StockProducto.ReadOnly = true;
-            this.dgv_StockProducto.Size = new System.Drawing.Size(283, 229);
+            this.dgv_StockProducto.Size = new System.Drawing.Size(303, 229);
             this.dgv_StockProducto.TabIndex = 24;
             // 
             // txtStockMinimo
