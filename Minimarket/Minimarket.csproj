@@ -315,7 +315,7 @@
     <EmbeddedResource Include="Reportes\Rpt_Marca.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Productos.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Rubro.rdlc" />
-    <EmbeddedResource Include="Reportes\Rpt_Unidad_Medida.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_UnidadMedida.rdlc" />
     <EmbeddedResource Include="Rubros.resx">
       <DependentUpon>Rubros.cs</DependentUpon>
     </EmbeddedResource>

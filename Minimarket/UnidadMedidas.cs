@@ -141,7 +141,15 @@ namespace Minimarket
         //Cargar siguiente codigo Categoria
         private void cargarCod()
         {
-            txtCodigo.Text = N_UnidadMedidas.sgteCod();
+            
+            if(N_UnidadMedidas.sgteCod() == "")
+            {
+                txtCodigo.Text = "1";
+            }
+            else
+            {
+                txtCodigo.Text = N_UnidadMedidas.sgteCod();
+            }
         }
 
         //limpiar
@@ -223,7 +231,6 @@ namespace Minimarket
         private void cancelar()
         {
             this.tbp_principal.SelectedIndex = 0;
-            this.txtDescripcion.ReadOnly = true;
         }
 
         #endregion

@@ -64,9 +64,9 @@ namespace Datos
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("opcion", MySqlDbType.Int64).Value = opcion;
                 command.Parameters.Add("codigo", MySqlDbType.Int64).Value = unidadmedidas.codigo;
-                command.Parameters.Add("abreviaturaum", MySqlDbType.VarChar).Value = unidadmedidas.abreviatura;
-                command.Parameters.Add("descripcionum", MySqlDbType.VarChar).Value = unidadmedidas.descripcion;
-                command.Parameters.Add("estadoum", MySqlDbType.Int32).Value = 1;
+                command.Parameters.Add("abreviaturamu", MySqlDbType.VarChar).Value = unidadmedidas.abreviatura;
+                command.Parameters.Add("descripcionmu", MySqlDbType.VarChar).Value = unidadmedidas.descripcion;
+                command.Parameters.Add("estadomu", MySqlDbType.Int32).Value = 1;
 
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS ";
             }
