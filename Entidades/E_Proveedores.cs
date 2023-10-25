@@ -20,7 +20,7 @@ namespace Entidades
         public string telefono { get; set; }
         public string movil { get; set; }
         public string direccion { get; set; }
-        public int cod_ciudad { get; set; }
+        public int cod_barrio { get; set; }
         public string observacion { get; set; }
 
         public E_Proveedores() { }

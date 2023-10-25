@@ -73,10 +73,10 @@ namespace Negocio
         }
 
         //buscar ciudad
-        public static DataTable listado_ciudad(String valor)
+        public static DataTable listado_barrio(String valor)
         {
             D_Proveedor datos = new D_Proveedor();
-            return datos.listado_ciudad(valor);
+            return datos.listado_barrio(valor);
         }
 
         //buscar rubro

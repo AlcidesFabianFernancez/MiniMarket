@@ -272,7 +272,7 @@ namespace Minimarket
         private void activar()
         {
             btnGuardar.Enabled = true;
-            btnCiudad.Enabled = true;
+            btnBarrio.Enabled = true;
             btnRubro.Enabled = true;
             btnTipoDoc.Enabled = true;
             txtApellido.Enabled = true;
@@ -292,7 +292,7 @@ namespace Minimarket
         private void desactivar()
         {
             btnGuardar.Enabled = false;
-            btnCiudad.Enabled = false;  
+            btnBarrio.Enabled = false;  
             btnRubro.Enabled = false;
             btnTipoDoc.Enabled = false;
             txtApellido.Enabled = false;
@@ -353,7 +353,7 @@ namespace Minimarket
                 this.txtTelefono.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[12].Value);
                 this.txtMovil.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[13].Value);
                 this.txtDireccion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[14].Value);
-                this.entidades.cod_ciudad= Convert.ToInt32(dgv_principal.CurrentRow.Cells[15].Value);
+                this.entidades.cod_barrio= Convert.ToInt32(dgv_principal.CurrentRow.Cells[15].Value);
                 this.txtCiudad.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[16].Value);
                 this.txtObservacion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[17].Value);
                 this.tbp_principal.SelectedIndex = 1;
@@ -427,7 +427,7 @@ namespace Minimarket
             else if (opcion == 5)
             {
                 txtCiudad.Text = valor;
-                this.entidades.cod_ciudad = codigo;
+                this.entidades.cod_barrio = codigo;
             }
             else if(opcion == 6)
             {

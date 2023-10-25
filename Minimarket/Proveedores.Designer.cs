@@ -67,7 +67,7 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRubro = new System.Windows.Forms.Button();
-            this.btnCiudad = new System.Windows.Forms.Button();
+            this.btnBarrio = new System.Windows.Forms.Button();
             this.btnTipoDoc = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -195,7 +195,7 @@
             this.tbp_mantenimiento.Controls.Add(this.txtCodigo);
             this.tbp_mantenimiento.Controls.Add(this.label3);
             this.tbp_mantenimiento.Controls.Add(this.btnRubro);
-            this.tbp_mantenimiento.Controls.Add(this.btnCiudad);
+            this.tbp_mantenimiento.Controls.Add(this.btnBarrio);
             this.tbp_mantenimiento.Controls.Add(this.btnTipoDoc);
             this.tbp_mantenimiento.Controls.Add(this.btnEliminar);
             this.tbp_mantenimiento.Controls.Add(this.btnCancelar);
@@ -393,9 +393,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(459, 71);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Ciudad";
+            this.label6.Text = "Barrio";
             // 
             // txtTipoDoc
             // 
@@ -458,15 +458,15 @@
             this.btnRubro.UseVisualStyleBackColor = true;
             this.btnRubro.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
-            // btnCiudad
+            // btnBarrio
             // 
-            this.btnCiudad.Image = ((System.Drawing.Image)(resources.GetObject("btnCiudad.Image")));
-            this.btnCiudad.Location = new System.Drawing.Point(723, 57);
-            this.btnCiudad.Name = "btnCiudad";
-            this.btnCiudad.Size = new System.Drawing.Size(50, 32);
-            this.btnCiudad.TabIndex = 6;
-            this.btnCiudad.UseVisualStyleBackColor = true;
-            this.btnCiudad.Click += new System.EventHandler(this.btnMedida_Click);
+            this.btnBarrio.Image = ((System.Drawing.Image)(resources.GetObject("btnBarrio.Image")));
+            this.btnBarrio.Location = new System.Drawing.Point(723, 57);
+            this.btnBarrio.Name = "btnBarrio";
+            this.btnBarrio.Size = new System.Drawing.Size(50, 32);
+            this.btnBarrio.TabIndex = 6;
+            this.btnBarrio.UseVisualStyleBackColor = true;
+            this.btnBarrio.Click += new System.EventHandler(this.btnMedida_Click);
             // 
             // btnTipoDoc
             // 
@@ -615,7 +615,7 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRubro;
-        private System.Windows.Forms.Button btnCiudad;
+        private System.Windows.Forms.Button btnBarrio;
         private System.Windows.Forms.Button btnTipoDoc;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCancelar;

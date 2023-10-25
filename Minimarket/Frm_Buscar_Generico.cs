@@ -140,11 +140,11 @@ namespace Minimarket
                     }
                     break;
                 case 5:
-                    lblTitulo.Text = "Ciudad";
+                    lblTitulo.Text = "Barrio";
                     lblTitulo.Location = new Point(170, 10);
                     try
                     {
-                        dgv_principal.DataSource = N_Proveedor.listado_ciudad("");
+                        dgv_principal.DataSource = N_Proveedor.listado_barrio("");
                         dgv_principal.Columns[1].Visible = false;
 
                     }
@@ -258,7 +258,7 @@ namespace Minimarket
             {
                 try
                 {
-                    dgv_principal.DataSource = N_Proveedor.listado_ciudad(this.txtBuscar.Text.Trim());
+                    dgv_principal.DataSource = N_Proveedor.listado_barrio(this.txtBuscar.Text.Trim());
                     dgv_principal.Columns[1].Visible = false;
 
                 }

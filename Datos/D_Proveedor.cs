@@ -76,7 +76,7 @@ namespace Datos
                 command.Parameters.Add("telefono", MySqlDbType.VarChar).Value = entidades.telefono;
                 command.Parameters.Add("movil", MySqlDbType.VarChar).Value = entidades.movil;
                 command.Parameters.Add("direccion", MySqlDbType.VarChar).Value = entidades.direccion;
-                command.Parameters.Add("cod_barrio", MySqlDbType.VarChar).Value = entidades.cod_ciudad;
+                command.Parameters.Add("cod_barrio", MySqlDbType.VarChar).Value = entidades.cod_barrio;
                 command.Parameters.Add("observacion", MySqlDbType.VarChar).Value = entidades.observacion;
                 command.Parameters.Add("estado", MySqlDbType.Int32).Value = 1;
                 mensaje = command.ExecuteNonQuery() == 0 ? "DATOS GUARDADOS CORRECTAMENTE" : "NO SE HA PODIDO GUARDAR LOS DATOS ";
@@ -265,7 +265,7 @@ namespace Datos
         /// </summary>
         /// <param name="valor"></param>
         /// <returns></returns>
-        public DataTable listado_ciudad(string valor)
+        public DataTable listado_barrio(string valor)
         {
             //MySqlDataReader resultado;
             DataTable tabla = new DataTable();
