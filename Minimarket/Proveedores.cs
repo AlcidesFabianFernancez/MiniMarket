@@ -97,6 +97,7 @@ namespace Minimarket
             cancelar() ; 
             limpiar();
             listado();
+            sigteCod();
         }
 
         private void dgv_principal_DoubleClick(object sender, EventArgs e)
@@ -207,6 +208,7 @@ namespace Minimarket
                 dgv_principal.Columns[14].Visible = false;
                 dgv_principal.Columns[15].Visible = false;
                 dgv_principal.Columns[16].Visible= false;
+                dgv_principal.Columns[17].Visible = false;
 
             }
             catch (Exception ex)
@@ -313,7 +315,7 @@ namespace Minimarket
         {
             txtApellido.Text = string.Empty;
             txtCorreo.Text = string.Empty;
-            txtCiudad.Text = string.Empty;
+            txtBarrio.Text = string.Empty;
             txtDireccion.Text= string.Empty;
             txtMovil.Text = string.Empty;
             txtNombre.Text = string.Empty;
@@ -338,36 +340,40 @@ namespace Minimarket
             }
             else
             {
+                int sexo = Convert.ToInt32(dgv_principal.CurrentRow.Cells[7].Value);                
+;               if(sexo == 4)
+                {
+                    this.cbbSexo.SelectedIndex = 0;
+                }
+                else if(sexo == 5)
+                {
+                    this.cbbSexo.SelectedIndex = 1;
+                }
+                else
+                {
+                    this.cbbSexo.SelectedIndex = 2;
+                }
                 this.txtCodigo.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[0].Value);
-                this.txtNumeroDoc.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[1].Value);
-                this.txtRazonSocial.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[2].Value);
-                this.txtNombre.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[3].Value);
-                this.txtApellido.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[4].Value);
-                this.entidades.tipodocumentos = Convert.ToInt32(dgv_principal.CurrentRow.Cells[5].Value);
-                this.txtTipoDoc.Text= Convert.ToString(dgv_principal.CurrentRow.Cells[6].Value);
+                this.txtRazonSocial.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[1].Value);
+                this.txtNombre.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[2].Value);
+                this.txtApellido.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[3].Value);
+                this.txtTipoDoc.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[4].Value);
+                this.txtNumeroDoc.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[5].Value);
+                //this.cbbSexo.SelectedIndex 
                 this.entidades.cod_sexo = Convert.ToInt32(dgv_principal.CurrentRow.Cells[7].Value);
-                //this.cbbSexo.SelectedIndex= Convert.ToInt32(dgv_principal.CurrentRow.Cells[8].Value);
+                this.txtRubro.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[8].Value);
                 this.entidades.cod_rubro = Convert.ToInt32(dgv_principal.CurrentRow.Cells[9].Value);
-                this.txtRubro.Text= Convert.ToString(dgv_principal.CurrentRow.Cells[10].Value);
-                this.txtCorreo.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[11].Value);
-                this.txtTelefono.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[12].Value);
-                this.txtMovil.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[13].Value);
-                this.txtDireccion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[14].Value);
-                this.entidades.cod_barrio= Convert.ToInt32(dgv_principal.CurrentRow.Cells[15].Value);
-                this.txtCiudad.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[16].Value);
-                this.txtObservacion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[17].Value);
+                this.txtCorreo.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[10].Value);
+                this.txtTelefono.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[11].Value);
+                this.txtMovil.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[12].Value);
+                this.txtDireccion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[13].Value);
+                this.txtBarrio.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[14].Value);
+                this.entidades.cod_barrio = Convert.ToInt32(dgv_principal.CurrentRow.Cells[15].Value);
+                this.txtObservacion.Text = Convert.ToString(dgv_principal.CurrentRow.Cells[16].Value);
+                this.entidades.tipodocumentos = Convert.ToInt32(dgv_principal.CurrentRow.Cells[17].Value);
                 this.tbp_principal.SelectedIndex = 1;
 
-                if (entidades.cod_sexo == 1)
-                {
-                    cbbSexo.SelectedIndex= 0;
-                } else if (entidades.cod_sexo == 2)
-                {
-                    cbbSexo.SelectedIndex = 1;
-                }else if(entidades.cod_sexo == 3)
-                {
-                    cbbSexo.SelectedIndex = 2;
-                }
+               
 
                     opcion = 1;                
 
@@ -426,7 +432,7 @@ namespace Minimarket
             }
             else if (opcion == 5)
             {
-                txtCiudad.Text = valor;
+                txtBarrio.Text = valor;
                 this.entidades.cod_barrio = codigo;
             }
             else if(opcion == 6)

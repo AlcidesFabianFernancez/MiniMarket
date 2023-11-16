@@ -58,7 +58,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtRubro = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCiudad = new System.Windows.Forms.TextBox();
+            this.txtBarrio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTipoDoc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -186,7 +186,7 @@
             this.tbp_mantenimiento.Controls.Add(this.label10);
             this.tbp_mantenimiento.Controls.Add(this.txtRubro);
             this.tbp_mantenimiento.Controls.Add(this.label7);
-            this.tbp_mantenimiento.Controls.Add(this.txtCiudad);
+            this.tbp_mantenimiento.Controls.Add(this.txtBarrio);
             this.tbp_mantenimiento.Controls.Add(this.label6);
             this.tbp_mantenimiento.Controls.Add(this.txtTipoDoc);
             this.tbp_mantenimiento.Controls.Add(this.label5);
@@ -224,7 +224,7 @@
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(671, 71);
-            this.txtObservacion.TabIndex = 44;
+            this.txtObservacion.TabIndex = 9;
             // 
             // label18
             // 
@@ -250,7 +250,7 @@
             this.txtDireccion.MaxLength = 30;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(671, 20);
-            this.txtDireccion.TabIndex = 35;
+            this.txtDireccion.TabIndex = 8;
             // 
             // label9
             // 
@@ -267,7 +267,7 @@
             this.txtMovil.MaxLength = 30;
             this.txtMovil.Name = "txtMovil";
             this.txtMovil.Size = new System.Drawing.Size(287, 20);
-            this.txtMovil.TabIndex = 33;
+            this.txtMovil.TabIndex = 7;
             // 
             // label8
             // 
@@ -284,7 +284,7 @@
             this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(268, 20);
-            this.txtTelefono.TabIndex = 31;
+            this.txtTelefono.TabIndex = 6;
             // 
             // label14
             // 
@@ -301,7 +301,7 @@
             this.txtCorreo.MaxLength = 30;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(287, 20);
-            this.txtCorreo.TabIndex = 29;
+            this.txtCorreo.TabIndex = 5;
             // 
             // label13
             // 
@@ -318,7 +318,7 @@
             this.txtApellido.MaxLength = 30;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(268, 20);
-            this.txtApellido.TabIndex = 27;
+            this.txtApellido.TabIndex = 4;
             // 
             // label12
             // 
@@ -335,7 +335,7 @@
             this.txtNombre.MaxLength = 30;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(287, 20);
-            this.txtNombre.TabIndex = 25;
+            this.txtNombre.TabIndex = 3;
             // 
             // label11
             // 
@@ -352,7 +352,7 @@
             this.txtRazonSocial.MaxLength = 30;
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(287, 20);
-            this.txtRazonSocial.TabIndex = 23;
+            this.txtRazonSocial.TabIndex = 2;
             // 
             // label10
             // 
@@ -380,13 +380,13 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Rubro";
             // 
-            // txtCiudad
+            // txtBarrio
             // 
-            this.txtCiudad.Enabled = false;
-            this.txtCiudad.Location = new System.Drawing.Point(505, 64);
-            this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(212, 20);
-            this.txtCiudad.TabIndex = 5;
+            this.txtBarrio.Enabled = false;
+            this.txtBarrio.Location = new System.Drawing.Point(505, 64);
+            this.txtBarrio.Name = "txtBarrio";
+            this.txtBarrio.Size = new System.Drawing.Size(212, 20);
+            this.txtBarrio.TabIndex = 5;
             // 
             // label6
             // 
@@ -420,7 +420,7 @@
             this.txtNumeroDoc.MaxLength = 30;
             this.txtNumeroDoc.Name = "txtNumeroDoc";
             this.txtNumeroDoc.Size = new System.Drawing.Size(287, 20);
-            this.txtNumeroDoc.TabIndex = 2;
+            this.txtNumeroDoc.TabIndex = 1;
             // 
             // label4
             // 
@@ -606,7 +606,7 @@
         private System.Windows.Forms.TabPage tbp_mantenimiento;
         public System.Windows.Forms.TextBox txtRubro;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox txtCiudad;
+        public System.Windows.Forms.TextBox txtBarrio;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtTipoDoc;
         private System.Windows.Forms.Label label5;
